@@ -93,7 +93,7 @@ class Currencies(API):
         else:
             return resp.text
 
-    def get_sparkline(self, start, end = None):
+    def get_sparkline(self, start, end = None, ids=None):
         '''
         Returns prices for all currencies within a customizable time interval suitable for sparkline charts.
 
@@ -103,10 +103,18 @@ class Currencies(API):
         '''
 
         url = self.client.get_url('currencies/sparkline')
-        params = {
-            'start': start,
-            'end': end
-        }
+
+        if ids:
+            params = {
+                'ids': ','.join(ids),
+                'start': start,
+                'end': end
+            }
+        else:
+            params = {
+                'start': start,
+                'end': end
+            }
 
         resp = requests.get(url, params = params)
 
