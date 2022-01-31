@@ -87,6 +87,10 @@ class Currencies(API):
         'github_url', 'medium_url', 'reddit_url', 'telegram_url', 'twitter_url', 'whitepaper_url', 'youtube_url', 'linkedin_url',
         'block_explorer_url', 'bitcointalk_url', 'replaced_by', 'cryptocontrol_coin_id', 'used_for_pricing',]
         '''
+
+        if type(ids) == list:
+            ids = ','.join(ids)
+
         if type(attributes) == list:
             attributes = ','.join(attributes)
 
