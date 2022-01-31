@@ -125,7 +125,7 @@ class Currencies(API):
 
     def get_supplies_interval(self, start, end = None):
         '''
-        Returns the open and close suplly information for all currencies between a customizable time interval
+        Returns the open and close supply information for all currencies between a customizable time interval
 
         :param  str start:  Start time of the interval in RFC3339 format
 
